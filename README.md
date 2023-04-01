@@ -65,9 +65,9 @@ After a lot of trial an error this time, and discovering how to print environmen
 > &ls&$ls&$ls&
 
 In fact any command between & signs is executed. So, after listing the current directory, reading from the flag file was the next step, which we accomplished by using the bash ${IFS} variable which replaces a space and is not blacklisted. Thus we obtained our final payload (more convoluted actually than it needs to be).
-
-> $ls&cat${IFS}flag&$0
-
+```
+ $ls&cat${IFS}flag&$0
+```
 
 # Usa Secreta:
 - Flag: ITEC{A1_INTR4T_P3_USA_D1N_SP1TE3}
@@ -425,8 +425,8 @@ Pe scurt functioneaza cam asa
 
 ```
 [a11, a12, a13] * [4]  = 19    
-			              [15]         
-			              [11]           
+		  [15]         
+		  [11]           
 
  [a11, a12, a13] * [0]  = 24
 			               [13]
@@ -456,8 +456,8 @@ Pe scurt functioneaza cam asa
 			               [4]
 
 [a31, a32, a33] * [19] = 15
-			               [19]
-			               [19]
+		  [19]
+		  [19]
 ```
 La inceput am luat variabile in range [0,50] dar ne-am dat seama ca avand nevoie de valori ascii 
 va trebui sa marim rangeul la [80,120]. 
