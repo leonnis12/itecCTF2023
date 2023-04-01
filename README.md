@@ -40,7 +40,11 @@ We can assume this is the sourcecode of the webpage, so after changing the reque
 
 ## Write up
 The website contains a POST form with a message input field.
+
+
 ![Challange form](https://i.imgur.com/bz1KjX9.png)
+
+
 The input is not processed and run using cowsay. After some trial and error, we find that bash variables are replaced in the processed output, so by inputting a command in a variable, we can execute it.
 >$tmp=`cat flag`;print "$tmp";
 
@@ -57,9 +61,12 @@ The input is not processed and run using cowsay. After some trial and error, we 
 This task is simmilar to te previous one, except characters are filtered, and the output is not shown unless the command contains only characters from A-Za-z09&$
 
 After a lot of trial an error this time, and discovering how to print environment variables in this context, we found we can run commands by inputting
->&ls&$ls&$ls&
+
+> &ls&$ls&$ls&
+
 In fact any command between & signs is executed. So, after listing the current directory, reading from the flag file was the next step, which we accomplished by using the bash ${IFS} variable which replaces a space and is not blacklisted. Thus we obtained our final payload (more convoluted actually than it needs to be).
->$ls&cat${IFS}flag&$0
+
+> $ls&cat${IFS}flag&$0
 
 
 # Usa Secreta:
@@ -318,11 +325,12 @@ Am incercat o serie de inputuri si am gasit o solutie din 9 mutari care evident 
 De aici a fost doar un timp doar pana am incercat multe valori cu scriptul care l-am facut pentru a vedea cum poti ajunge la 0 in sub 8 mutari;
 
 Seria de input
->1S7
->1N10
->1N1 x 5
->1S1 
-
+```
+1S7
+1N10
+1N1 x 5
+1S1 
+```
 
 ```
 #!/usr/local/bin/python3
@@ -403,9 +411,9 @@ Apoi am observat ca
 
 Arata ca o inmultire de matrici de genul 
 
->[a11, a12, a13]   [p11]   [c11]
->[a21, a22, a23] * [p21] = [c21]
->[a31, a32, a33]   [p31]   [c31]
+> [a11, a12, a13]   [p11]   [c11]
+> [a21, a22, a23] * [p21] = [c21]
+> [a31, a32, a33]   [p31]   [c31]
 
 Deci asta inseamna ca se iau cate 3 caractere din string si se encripteaza din 3 in 3 cu o cheie de 3x3
 
@@ -415,42 +423,42 @@ Am creat un script care trece de 3 ori pentru a egala fiecare row din cheie.
 
 Pe scurt functioneaza cam asa
 
+```
+[a11, a12, a13] * [4]  = 19    
+			              [15]         
+			              [11]           
 
->[a11, a12, a13] * [4]  = 19    
->			       [15]         
->			       [11]           
->
->[a11, a12, a13] * [0]  = 24
->			       [13]
->			       [4]
->[a11, a12, a13] * [19]  = 5
->			       [19]
->			       [19]
->
->[a21, a22, a23] * [4]  = 16
->			       [15]         
->			       [11]           
->
->[a21, a22, a23] * [0]  = 22
->			       [13]
->			       [4]
->
-[>a21, a22, a23] * [19] = 15
->			       [19]
->			       [19]
->
-[>a31, a32, a33] * [4]  = 16
->			       [15]         
->			       [11]           
->
->[a31, a32, a33] * [0]  = 22
->			       [13]
->			       [4]
->
-[>a31, a32, a33] * [19] = 15
->			       [19]
->			       [19]
+ [a11, a12, a13] * [0]  = 24
+			               [13]
+			                [4]
+[a11, a12, a13] * [19]  = 5
+			               [19]
+			               [19]
 
+[a21, a22, a23] * [4]  = 16
+			               [15]         
+			               [11]           
+
+[a21, a22, a23] * [0]  = 22
+			              [13]
+			               [4]
+
+[a21, a22, a23] * [19] = 15
+			               [19]
+			               [19]
+
+[a31, a32, a33] * [4]  = 16
+			              [15]         
+			              [11]           
+
+[a31, a32, a33] * [0]  = 22
+			              [13]
+			               [4]
+
+[a31, a32, a33] * [19] = 15
+			               [19]
+			               [19]
+```
 La inceput am luat variabile in range [0,50] dar ne-am dat seama ca avand nevoie de valori ascii 
 va trebui sa marim rangeul la [80,120]. 
 
@@ -471,10 +479,10 @@ Iar surpriza a iesit si mesajul:
 >[94, 82, 91, 97, 91, 103, 95, 91, 93, 95, 80, 99, 102, 86, 91, 102, 92, 86, 95, 89, 105, 85, 80, 95, 93, 86, 102, 99, 91, 104, 95, 86, 95, 94, 82, 103, 102, 91, 82, 91, 83, 93, 82, 85, 93, 95, 81, 95, 94, 82, 85, 103, 86, 104, 103, 86, 95, 90, 81, 95, 104, 92, 91, 80, 84, 95]
 
 De aici a lipsit doar sa transformam din ascii in litere
-
->msg: ^R[a[g_[]_PcfV[f\V_YiUP_]Vfc[h_V_^Rgf[R[S]RU]_Q_^RUgVhgV_ZQ_h\[PT_
->key: ZfaehZgT]
-
+```
+ msg: ^R[a[g_[]_PcfV[f\V_YiUP_]Vfc[h_V_^Rgf[R[S]RU]_Q_^RUgVhgV_ZQ_h\[PT_
+ key: ZfaehZgT]
+```
 
 Primul Script
 ```
