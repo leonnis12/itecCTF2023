@@ -8,12 +8,12 @@ Write-Up Authors:
 
 ---
 
-# Web Challanges:
+# Web Challenges:
 
 # Flamanzila:
 - Flag: ITEC{T1E_1T1_PL4C_PR1J1TURI1LE}
 
-## Challange description:
+## Challenge description:
 >Lui Flamanzila ii plac foarte mult prajiturile. Daca ii dai ceea ce el vrea, o sa ti dea si el ceva in schimb.
 >http://64.226.75.15:60120 
 
@@ -34,7 +34,7 @@ We can assume this is the sourcecode of the webpage, so after changing the reque
 # Vacuta_milka_1:
 - Flag: ITEC{V4CUTA_M1LKA_4_U1TAT_D3_INJ3CT4R3A_DE_C0M3NZ1} 
 
-## Challange description:
+## Challenge description:
 >Vacuta milka vrea sa vorbeasca cu tine.
 >http://64.226.75.15:60121 
 
@@ -42,7 +42,7 @@ We can assume this is the sourcecode of the webpage, so after changing the reque
 The website contains a POST form with a message input field.
 
 
-![Challange form](https://i.imgur.com/bz1KjX9.png)
+![Challenge form](https://i.imgur.com/bz1KjX9.png)
 
 
 The input is not processed and run using cowsay. After some trial and error, we find that bash variables are replaced in the processed output, so by inputting a command in a variable, we can execute it.
@@ -53,7 +53,7 @@ The input is not processed and run using cowsay. After some trial and error, we 
 # Vacuta_milka_2:
 - Flag: ITEC{V4CUTA_M1LKA_4_C0M1S0_D1NOU}
 
-## Challange description:
+## Challenge description:
 >Acum s-a suparat si nu mai vrea sa raspuna la orice cuvant :(
 >http://64.226.75.15:60122 
 
@@ -72,12 +72,12 @@ In fact any command between & signs is executed. So, after listing the current d
 # Usa Secreta:
 - Flag: ITEC{A1_INTR4T_P3_USA_D1N_SP1TE3}
 
-## Challange description:
+## Challenge description:
 >Poti sa gasesti usa secreta? Poate te ajuta vreun header
 >http://64.226.75.15:60123 
 
 ## Write up
-The challange description was a big hint, as the backdoor referenced was an Remote Shell exploit, we could identify as viable through the headers of the webpage.
+The challenge description was a big hint, as the backdoor referenced was an Remote Shell exploit, we could identify as viable through the headers of the webpage.
 >X-Powered-By: PHP/8.1.0-dev
 
 __Reference:__
@@ -94,7 +94,7 @@ After gaining remote shell, we accessed the flag at
 # Fata Morgana:
 - Flag: ITEC{f4t4_m0rg4na_ba73_camp11_Cu_un_POKEMON}
 
-## Challange description:
+## Challenge description:
 >Din departare se zareste un flag, dar cu cat te apropii mai mult de el, pare sa dispara.
 
 ## Write up
@@ -119,7 +119,7 @@ When looking at the data section we tried to convert the data directly to instru
 # Ochila 2.0:
 - Flag: ITEC{Ochila_frate_cu_Orbila_var_primar_cu_Chiorila}
 
-## Challange description:
+## Challenge description:
 >Ochilă se laudă că securitatea lui este mai bună decat a amicilor săi, insă ii tot fug ochii cu mult dupa canary, oare ce s-ar putea găsi acolo?
 >nc 64.226.75.15 60101 
 
@@ -147,7 +147,7 @@ We came up with the following exploit, which although simple in nature, printing
 # Apus in Timisoara:
 - Flag: ITEC{T1M1S04RA_3_FRUM0ASA_S1_UNIC4_NU_I_ASA??}
 
-## Challange description:
+## Challenge description:
 >O poza minunata cu un apus in Timisoara. Sau e mai semnificativa de atat??
 
 ## Write up
@@ -167,7 +167,7 @@ Si flagul dupa ceaser
 # Poza Itec:
 - Flag: ITEC{ST1AI_CA_P0T1_4SCUND3_F1S1ER3_4N_POZ3??!}
 
-## Challange description:
+## Challenge description:
 >Am primit aceasta poza. Presimt ca se ascunde ceva in ea, poti sa imi spui ce ?
 
 ## Write up
@@ -190,7 +190,7 @@ After an hour or so of brute-forcing, we found a recommandation online to switch
 # Trafic suspect:
 - Flag: ITEC{Exf1ltr4r3a_Pr1n_Dns_Nu_E_S1lentio4sa}
 
-## Challange description:
+## Challenge description:
 >Dintr-o data am observat pe trafic mai multe request-uri DNS, ceea ce e putin suspect. Misiunea ta e sa afli ce a exfiltrat atacatorul.
 
 ## Write up
@@ -203,7 +203,7 @@ After converting to ascii we got the flag.
 # Tenis de masa:
 - Flag: ITEC{P1NG_P0NG_PIN5_PON5_PING_PONGGG}
 
-## Challange description:
+## Challenge description:
 >Ochila a mai observat inca o data ceva ciudat, acum sunt multe packete de tip ICMP. Poti sa-l ajuti sa gaseasca ce se afla in ele
 
 ## Write up
@@ -214,7 +214,7 @@ After opening the pcap file, we observed a lot of ICMP requests with consistent 
 # Prietenie:
 - Flag: ITEC{vrajitoarea}
 
-## Challange description:
+## Challenge description:
 >Ochila s-a suparat de Setila, si vrea sa se conecteze la reteaua sa. A reusit sa captureze acest trafic, poti tu oare sa-l ajuti sa afle parola ? FLAG FORMAT :ITEC{parola}
 
 ## Write up
@@ -230,7 +230,7 @@ The password was: vrajitoarea
 # Format:
 - Flag: ITEC{S4_NU_A1_1NCREDER3_1N_F0RM4T}
 
-## Challange description:
+## Challenge description:
 >Un fel de vacuta milka, doar ca nu asa fancy si fara vacuta :))
 
 ## Write up
@@ -240,7 +240,7 @@ This task had the flag written in plaintext in the source file :P
 # Format #2:
 - Flag: {message.\_\_init\_\_.\_\_globals\_\_}
 
-## Challange description:
+## Challenge description:
 >Ca primul, doar ca fara flag in cod... P.S:Acum merge remote.
 > http://64.226.75.15:60109 
 
@@ -252,7 +252,7 @@ This task was easy, as the user input was placed directly in a string format, in
 # Arta:
 - Flag: ITEC{P1ET_M0NDR1AN_A_F0ST_UN_P1CT0R}
 
-## Challange description:
+## Challenge description:
 >Se zice ca fiecare opera de arta transmite ceva. Ce iti transmite aceasta ? (este de origine olandeza)
 
 ## Write up
@@ -265,7 +265,7 @@ Cui nu-i plac operele de arta?
 # Gheorghe cel voinic:
 - Flag: ITEC{Și_încălecai_pe-o_căpșună_și_vă_spusei_o_minciună}
 
-## Challange description:
+## Challenge description:
 >După o noapte petrecută la pândă, Gheorghe zăreste hotul de mere. Urmăreste-l in prin labirint și il vei putea prinde la ultimul nivel.
 >nc 64.226.75.15 60005 
 
@@ -286,7 +286,7 @@ Dupa cateva incercari a reusit
 # Spanzuratoarea:
 - Flag: ITEC{tr41m_4l4tur1_d3_34_p4n4_mur1m_474rna71_d3_34}
 
-## Challange description:
+## Challenge description:
 >Incepe ora de matematica, iar domnul profesor propune sa jucati jocul “spânzuratoarea”. Insă regulile arată putin diferit: aveti o singura sansă să ghiciti intreg cuvantul, iar pentru fiecare literă există anumite constrangeri. Succes!
 
 ## Write up
@@ -310,7 +310,7 @@ Dupaia continui pe aceeasi idee pana gasesti toate literele. (Munca de chinez ba
 # Bisnitar:
 - Flag: ITEC{nu_umbl4_cu_0c4u4_m1c4}
 
-## Challange description:
+## Challenge description:
 >Un negustor isi intinde masa, in fiecare dimineată, pentru a servi străinii cumpărători cu un schimb valutar pe cinste. Numai că cinstea acestuia este adesea discutată pe la colturi de drum. Plătește-i cu aceiasi monedă!
 >nc 64.226.75.15 60000 
 
@@ -393,7 +393,7 @@ for i in range(0,client_stoc_solidus + 1):
 # O scrisoare pierduta:
 - Flag: ITEC{https://youtu.be/niiYWyglQMM}
 
-## Challange description:
+## Challenge description:
 >Cetățeanul turmentat iți inmana o scrisoare de amor. Insă in forma ei actuala, nu poate fi folosită drept șantaj. O poti tu oare desluși?
 >nc 64.226.75.15 60002 
 
@@ -428,32 +428,33 @@ Pe scurt functioneaza cam asa
 		  [15]         
 		  [11]           
 
- [a11, a12, a13] * [0]  = 24
-			               [13]
-			                [4]
+[a11, a12, a13] * [0]  = 24
+		  [13]
+		  [4]
+		  
 [a11, a12, a13] * [19]  = 5
-			               [19]
-			               [19]
+	          [19]
+		  [19]
 
 [a21, a22, a23] * [4]  = 16
-			               [15]         
-			               [11]           
+	          [15]         
+		  [11]           
 
 [a21, a22, a23] * [0]  = 22
-			              [13]
-			               [4]
+		  [13]
+		  [4]
 
 [a21, a22, a23] * [19] = 15
-			               [19]
-			               [19]
+		  [19]
+		  [19]
 
 [a31, a32, a33] * [4]  = 16
-			              [15]         
-			              [11]           
+		  [15]         
+		  [11]           
 
 [a31, a32, a33] * [0]  = 22
-			              [13]
-			               [4]
+		  [13]
+		  [4]
 
 [a31, a32, a33] * [19] = 15
 		  [19]
